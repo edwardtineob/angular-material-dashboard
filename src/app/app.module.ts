@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routing } from './app.routes';
-import { MatButtonModule, MatRadioModule, MatInputModule, MatMenuModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule, MatRadioModule, MatInputModule, MatMenuModule, MatCheckboxModule, MatSelectModule, MatCardModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -30,6 +31,14 @@ import { PanelsComponent } from './dashboard/component/panels/panels.component';
 
 import { SettingsService } from './services/settings.service';
 import { WizardComponent } from './dashboard/component/wizard/wizard.component';
+import { AddressComponent } from './pages/address/address.component';
+import { DomainsComponent } from './dashboard/domains/domains.component';
+import { VehiclesComponent } from './dashboard/administration/vehicles/vehicles.component';
+import { DriversComponent } from './dashboard/administration/drivers/drivers.component';
+import { LocationsComponent } from './dashboard/locations/locations.component';
+import { RoutesComponent } from './dashboard/routes/routes.component';
+import { CustomersComponent } from './dashboard/customers/customers.component';
+import { TravelsComponent } from './dashboard/travels/travels.component';
 
 @NgModule({
   declarations: [
@@ -53,19 +62,31 @@ import { WizardComponent } from './dashboard/component/wizard/wizard.component';
     SettingsComponent,
     PriceTableComponent,
     PanelsComponent,
-    WizardComponent
+    WizardComponent,
+    AddressComponent,
+    DomainsComponent,
+    VehiclesComponent,
+    DriversComponent,
+    LocationsComponent,
+    RoutesComponent,
+    CustomersComponent,
+    TravelsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     routing,
     BrowserAnimationsModule,
     MatButtonModule,
     MatRadioModule,
     MatInputModule,
     MatMenuModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSelectModule,
+    MatCardModule,
+    ReactiveFormsModule
   ],
   providers: [SettingsService],
   bootstrap: [AppComponent]

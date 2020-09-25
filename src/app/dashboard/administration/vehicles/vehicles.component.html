@@ -1,0 +1,35 @@
+<div class="container">
+  <app-navbar [(title)]="title" [(menuItems)]="menu"></app-navbar>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="material-icons">directions_car</i>
+        </div>
+        <div class="card-content">
+          <h4 class="card-title">Vehiculos</h4>
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="text-primary">
+                <tr>
+                  <th>Matricula</th>
+                  <th>Marca</th>
+                  <th>Modelo</th>
+                  <th>Año</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let vehicle of vehicles">
+                <tr>
+                  <td>{{vehicle.registerNumber}}</td>
+                  <td>{{vehicle.model.brand.description}}</td>
+                  <td>{{vehicle.model.description}}</td>
+                  <td>{{vehicle.year}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

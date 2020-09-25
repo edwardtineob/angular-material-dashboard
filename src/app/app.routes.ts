@@ -16,13 +16,19 @@ import { RootComponent } from './dashboard/root/root.component';
 import { LoginComponent } from './page/login/login.component';
 import { LockComponent } from './page/lock/lock.component';
 import { RegisterComponent } from './page/register/register.component';
+import { AddressComponent } from './pages/address/address.component';
+import { DomainsComponent } from './dashboard/domains/domains.component';
+import { DriversComponent } from './dashboard/administration/drivers/drivers.component';
+import { VehiclesComponent } from './dashboard/administration/vehicles/vehicles.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
+  // {path: '', component: RootComponent},
   {path: 'lock', component: LockComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'dashboard', component: RootComponent, children: [
     {path: '', component: HomeComponent},
+    {path: 'address', component: AddressComponent},
     {path: 'profile', component: ProfileComponent},
     {path: 'table', component: TableComponent},
     {path: 'notification', component: NotificationComponent},
@@ -30,7 +36,10 @@ const routes: Routes = [
     {path: 'settings', component: SettingsComponent},
     {path: 'components/price-table', component: PriceTableComponent},
     {path: 'components/panels', component: PanelsComponent},
-    {path: 'components/wizard', component: WizardComponent}
+    {path: 'components/wizard', component: WizardComponent},
+    {path: 'domains', component: DomainsComponent},
+    {path: 'administration/drivers', component: DriversComponent},
+    {path: 'administration/vehicles', component: VehiclesComponent}
   ]}
 ];
 
